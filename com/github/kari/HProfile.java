@@ -116,5 +116,6 @@ public class HProfile {
         public List<LoadClassType> classTable;
         public List<StackFrame> frameTable;
         public List<StackTrace> traceTable;
+        public List<Dump> dumps;
     }
 }

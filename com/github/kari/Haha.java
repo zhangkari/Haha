@@ -2,10 +2,6 @@
 package com.github.kari;
 
 import com.github.kari.Parser;
-import com.github.kari.HProfile.StringType;
-
-import java.util.List;
-
 import com.github.kari.HProfile;
 
 /**
@@ -26,5 +22,6 @@ public class Haha {
         Log.d("string table length:" + profile.body.stringTable.size());
         Log.d("class table length:" + profile.body.classTable.size());
         Log.d("stack trace table length:" + profile.body.traceTable.size());
+        Log.d("dump length:" + profile.body.dumps.size());
     }
 }

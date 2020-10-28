@@ -92,6 +92,10 @@ public class Parser {
 
             case HProfile.TAG_HEAP_DUMP_SEGMENT:
                 Log.d("dump segment");
+                if (body.dumps == null) {
+                    body.dumps = new ArrayList<>();
+                }
+                body.dumps.add(parseHeapDump());
                 break;
 
             default:
@@ -183,7 +187,57 @@ public class Parser {
             long id = readId();
             switch (tag) {
             case HProfile.GC_ROOT_UNKNOWN:
+                Log.d("gc root unknown");
                 break;
+
+            case HProfile.GC_ROOT_JNI_GLOBAL:
+                Log.d("gc root jni global");
+                break;
+
+            case HProfile.GC_ROOT_JNI_LOCAL:
+                Log.d("gc root jni local");
+                break;
+
+            case HProfile.GC_ROOT_JAVA_FRAME:
+                Log.d("gc root java frame");
+                break;
+
+            case HProfile.GC_ROOT_NATIVE_STACK:
+                Log.d("gc root native stack");
+                break;
+
+            case HProfile.GC_ROOT_STICKY_CLASS:
+                Log.d("gc root sticky class");
+                break;
+
+            case HProfile.GC_ROOT_THREAD_BLOCK:
+                Log.d("gc root thread block");
+                break;
+
+            case HProfile.GC_ROOT_MONITOR_USED:
+                Log.d("gc root jni monitor used");
+                break;
+
+            case HProfile.GC_THREAD_OBJ:
+                Log.d("gc thread obj");
+                break;
+
+            case HProfile.GC_CLASS_DUMP:
+                Log.d("gc class dump");
+                break;
+
+            case HProfile.GC_INSTANCE_DUMP:
+                Log.d("gc instance dump");
+                break;
+
+            case HProfile.GC_OBJ_ARRAY_DUMP:
+                Log.d("gc obj array dump");
+                break;
+
+            case HProfile.GC_PRIM_ARRAY_DUMP:
+                Log.d("gc prim array dump");
+                break;
+
             }
         }
         return dump;
